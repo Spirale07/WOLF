@@ -15,17 +15,20 @@ int         main(int argc, char **argv)
 
     if (!(data = (t_data *)malloc(sizeof(t_data))))
 		return (-1);
+    ft_putendl("Je suis ici");
     ft_struct(data);
+    ft_putendl("Je suis ici2");
     ft_verif_file(data, argv[1]);
+     ft_putendl("Je suis ici3");
     if ((data->mlx_ptr = mlx_init()) == NULL)
 		return (EXIT_FAILURE);
+    ft_putendl("Je suis ici4");
     wolf(data);
+    ft_putendl("Je suis ici5");
     if (argc == 2)
     {
         ft_get_tab(argv[1], data);
         ft_chartoint(argv[1], data);
-
-
         mlx_key_hook(data->win_ptr, deal_key, data);
 	    mlx_hook(data->win_ptr, 17, 1L << 17, ft_close, data);
 	    mlx_loop(data->mlx_ptr);
@@ -33,18 +36,6 @@ int         main(int argc, char **argv)
     }
     return(0);
 }
-
-
-
-//mlx_hook(data->win_ptr, 17, (1L << 6), close, data);
-
-
-
-
-
-
-
-
 
 //test affich map
 

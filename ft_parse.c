@@ -7,6 +7,8 @@ void        ft_verif_file(t_data *data, char *argv)
     int fd;
 
     fd = open(argv, O_RDONLY);
+    ft_putnbr(fd);
+    ft_putchar('\n');
     if (fd > 0)
     {
         while (get_next_line(fd, &line) == 1)
@@ -25,5 +27,8 @@ void        ft_verif_file(t_data *data, char *argv)
         close(fd);
     }
     else
+    {   
+        ft_putendl("./wolf3d map");
         ft_exit(fd);
+    }
 }
